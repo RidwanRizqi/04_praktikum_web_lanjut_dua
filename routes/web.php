@@ -33,9 +33,9 @@ Route::get('/news/{title}', [NewsController::class, 'show'] );
 
 Route::prefix('/program')->group(function () {
     Route::get('/', [ProgramController::class, 'index']);
-    Route::get('/program1', [ProgramController::class, 'program1']);
-    Route::get('/program2', [ProgramController::class, 'program2']);
-    Route::get('/program3', [ProgramController::class, 'program3']);
+    Route::get('/program-1', [ProgramController::class, 'program1']);
+    Route::get('/program-2', [ProgramController::class, 'program2']);
+    Route::get('/program-3', [ProgramController::class, 'program3']);
 });
 
 Route::get('/about-us', AboutUsController::class);

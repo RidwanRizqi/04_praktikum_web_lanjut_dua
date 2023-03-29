@@ -10,7 +10,7 @@
                     <div class="col-lg-12">
                         <div class="text-content">
                             <h4>Program Details</h4>
-                            <h2>{{$category}} Details</h2>
+                            <h2>{{ $program->name }}  Details</h2>
                         </div>
                     </div>
                 </div>
@@ -32,10 +32,9 @@
                                         <img src="assets/images/blog-post-02.jpg" alt="">
                                     </div>
                                     <div class="down-content">
-                                        <span>{{$category}}</span>
-                                        <a href="post-details.html"><h4>{{$category}} Description</h4></a>
-                                        <p>You can browse different tags such as <a rel="nofollow" href="https://templatemo.com/tag/multi-page" target="_parent">multi-page</a>, <a rel="nofollow" href="https://templatemo.com/tag/resume" target="_parent">resume</a>, <a rel="nofollow" href="https://templatemo.com/tag/video" target="_parent">video</a>, etc. to see more CSS templates. Sed hendrerit rutrum arcu, non malesuada nisi. Sed id facilisis turpis. Donec justo elit, dapibus vel ultricies in, molestie sit amet risus. In nunc augue, rhoncus sed libero et, tincidunt tempor nisl. Donec egestas, quam eu rutrum ultrices, sapien ante posuere nisl, ac eleifend eros orci vel ante. Pellentesque vitae eleifend velit. Etiam blandit felis sollicitudin vestibulum feugiat.
-                                            <br><br>Donec tincidunt leo nec magna gravida varius. Suspendisse felis orci, egestas ac sodales quis, venenatis et neque. Vivamus facilisis dignissim arcu et blandit. Maecenas finibus dui non pulvinar lacinia. Ut lacinia finibus lorem vel porttitor. Suspendisse et metus nec libero ultrices varius eget in risus. Cras id nibh at erat pulvinar malesuada et non ipsum. Suspendisse id ipsum leo.</p>
+                                        <span>{{ $program->name }}</span>
+                                        <h4>{{ $program->name }} Description</h4>
+                                        {!! $program->description !!}
                                         <div class="post-options">
                                             <div class="row">
                                                 <div class="col-6">

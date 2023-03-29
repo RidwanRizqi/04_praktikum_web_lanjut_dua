@@ -7,27 +7,27 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link <?php () ?>" href="{{URL('/')}}">Home</a>
+                    <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="{{URL('/')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{URL('/about-us')}}">About Us</a>
+                    <a class="nav-link {{ (request()->is('/about-us')) ? 'active' : '' }}" href="{{URL('/about-us')}}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="{{URL('/product')}}">
+                    <a class="nav-link {{ (request()->segment(1) == 'product') ? 'active' : '' }}" href="{{URL('/product')}}">
                         Product
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link down">
+                <li class="nav-item">
+                    <a class="nav-link {{ (request()->segment(1) == 'program') ? 'active' : '' }}" href="{{ URL('/program') }}">
                         Program
                     </a>
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{URL('/news')}}">News</a>
+                    <a class="nav-link {{ (request()->segment(1) == 'news') ? 'active' : '' }}" href="{{URL('/news')}}">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{URL('/contact-us')}}">Contact Us</a>
+                    <a class="nav-link {{ (request()->is('/contact-us')) ? 'active' : '' }}" href="{{URL('/contact-us')}}">Contact Us</a>
                 </li>
             </ul>
         </div>

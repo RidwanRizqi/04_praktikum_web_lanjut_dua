@@ -26,20 +26,16 @@
                 <div class="col-lg-8">
                     <div class="all-blog-posts">
                         <div class="row">
+                            @foreach($programs as $program)
                             <div class="col-lg-6">
                                 <div class="blog-post">
                                     <div class="blog-thumb">
-                                        <img src="images/blog-thumb-01.jpg" alt="">
+                                        <img src="images/{{ $program->image }}" alt="">
                                     </div>
                                     <div class="down-content">
-                                        <span>Lifestyle</span>
-                                        <a href="post-details.html"><h4>Donec tincidunt leo</h4></a>
-                                        <ul class="post-info">
-                                            <li><a href="#">Admin</a></li>
-                                            <li><a href="#">May 31, 2020</a></li>
-                                            <li><a href="#">12 Comments</a></li>
-                                        </ul>
-                                        <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                                        <span>{{ $program->name }}</span>
+                                        <a href="{{URL('/program/' . Str::slug($program->name))}}"><h4>Detail {{ $program->name }}</h4></a>
+                                        <p>{{ $program->excerpt }}</p>
                                         <div class="post-options">
                                             <div class="row">
                                                 <div class="col-lg-12">
@@ -54,6 +50,8 @@
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
+
 {{--                            <div class="col-lg-12">--}}
 {{--                                <ul class="page-numbers">--}}
 {{--                                    <li><a href="#">1</a></li>--}}

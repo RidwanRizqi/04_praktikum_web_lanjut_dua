@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="down-content">
                                         <span>{{$product->name}}</span>
-                                        <a href="{{URL('/product/product1')}}"><h4>Detail {{ $product->name }}</h4></a>
+                                        <a href="{{URL('/product/' . Str::slug($product->name))}}"><h4>Detail {{ $product->name }}</h4></a>
                                         <p>{{ $product->excerpt }}</p>
                                         <div class="post-options">
                                             <div class="row">
