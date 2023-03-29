@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
     public function index()
     {
-        return view('news');
+        $news = News::all();
+        return view('news', compact('news'));
     }
-    public function show($title)
+
+    public function show($slug)
     {
-        return view('news', ['title' => $title]);
+        $news = News::where('slug', $slug)->first();
+        return view('detail-news', compact('news'));
     }
 }

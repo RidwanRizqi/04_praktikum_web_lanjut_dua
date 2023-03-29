@@ -7,22 +7,31 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $products = Product::all();
         return view('product', compact('products'));
     }
 
     public function product1() {
-        return view('detail-product', ['category' => 'produk1']);
+        $product = Product::where('name', 'Product 1')->first();
+        return view('detail-product', compact('product'));
     }
 
     public function product2()
     {
-        return view('detail-product', ['category' => 'produk2']);
+        $product = Product::where('name', 'Product 2')->first();
+        return view('detail-product', compact('product'));
     }
 
     public function product3()
     {
-        return view('detail-product', ['category' => 'produk3']);
+        $product = Product::where('name', 'Product 3')->first();
+        return view('detail-product', compact('product'));
+    }
+    public function product4()
+    {
+        $product = Product::where('name', 'Product 4')->first();
+        return view('detail-product', compact('product'));
     }
 }
